@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>custom flow</title>
+  <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+<body>
+  <form>
+    <div class="group">
+      <label>
+        <span><input type="radio" name="payment-source" value="saved-card-1" checked></span>
+        <div id="saved-card">**** **** **** 1234</div>
+      </label>
+      <label>
+        <span><input type="radio" name="payment-source" value="saved-card-2"></span>
+        <div id="saved-card">**** **** **** 6789</div>
+      </label>
+      <div id="pouet">
+        <span><input type="radio" name="payment-source" value="new-card" id="new-card-radio"></span>
+        <div id="card-element" class="field"></div>      
+      </div>
+    </div>
+    <button type="submit">Pay $25</button>
+    <div class="outcome">
+      <div class="error"></div>
+      <div class="success-saved-card">
+        Success! Your are using saved card <span class="saved-card"></span>
+      </div>
+      <div class="success-new-card">
+        Success! The Stripe token for your new card is <span class="token"></span>
+      </div>
+    </div>
+  </form>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
